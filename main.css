@@ -1,0 +1,36 @@
+body {
+    background-image: url("./imgs/background.jpg");
+}
+
+.content-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.central-block {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 300px;
+    background: white;
+    padding: 50px;
+    border-radius: 3px;
+}
+
+.action-button {
+    display: block;
+    background-color: #0081CC;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 500;
+    height: 30px;
+    padding: 0 15px;
+    cursor: pointer;
+    margin: 15px 0;
+}
