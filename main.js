@@ -6,9 +6,24 @@ var XMLdata = {
     content: '<data>some data</data>'
 };
 
-var doc = new jsPDF();
+
+window.onload = function() {
+    document.getElementById('xml_file').addEventListener('change', handleFileSelect, false);
+};
+
+function handleFileSelect(event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+        XMLdata.loaded = true;
+        XMLdata.content = reader.result;
+    };
+    reader.readAsText(input.files[0]);
+}
 
 function generatePDF() {
+    var doc = new jsPDF();
     doc.fromHTML(XMLdata.content, 10, 10, {'width': 180});
-    doc.save('Diploma.pdf');
+    doc.save('Diplomas.pdf');
 }
